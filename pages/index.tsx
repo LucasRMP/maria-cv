@@ -11,15 +11,29 @@ const notoSans = Noto_Sans_Display({
   fallback: ['sans-serif'],
 });
 
-const Section: React.FC<React.PropsWithChildren<{ breakLayout?: boolean }>> = ({
-  children,
-  breakLayout = false,
-}) => {
+const HeaderAnchor = ({ id = '' }) => {
+  return (
+    <a
+      style={{
+        display: 'block',
+        position: 'relative',
+        top: '-120px',
+        visibility: 'hidden',
+      }}
+      id={id}
+    ></a>
+  );
+};
+
+const Section: React.FC<
+  React.PropsWithChildren<{ breakLayout?: boolean; [key: string]: any }>
+> = ({ children, breakLayout = false, ...props }) => {
   const paddingClasses = breakLayout ? '' : 'px-36 py-10';
 
   return (
     <section
       className={`flex flex-col items-center justify-center ${paddingClasses}`}
+      {...props}
     >
       {children}
     </section>
@@ -42,9 +56,11 @@ const Home: NextPage = () => {
           <Introduction />
         </Section>
         <Section breakLayout>
+          <HeaderAnchor id="portifolio" />
           <PersonalProjects />
         </Section>
       </main>
+      <HeaderAnchor id="contact" />
       <Footer />
     </div>
   );

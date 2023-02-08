@@ -33,8 +33,8 @@ export default function Header() {
 
         <nav className="flex flex-grow justify-end items-center gap-8 text-xl text-green-900 transition-all">
           <NavLink href="#">Formação</NavLink>
-          <NavLink href="#">Portifólio</NavLink>
-          <NavLink href="#">Contato</NavLink>
+          <NavLink href="#portifolio">Portifólio</NavLink>
+          <NavLink href="#footer">Contato</NavLink>
         </nav>
       </div>
     </header>
