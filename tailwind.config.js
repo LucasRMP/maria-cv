@@ -6,6 +6,8 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
     './app/**/*.{js,ts,jsx,tsx}',
+    './content/**/*.{js,ts,jsx,tsx,md,mdx}',
+    './constants/tailwind-index.ts',
   ],
   theme: {
     colors: {
@@ -17,6 +19,14 @@ module.exports = {
         300: '#D0FDD7',
         400: '#9FCDB1',
         900: '#2D422D',
+      },
+    },
+    fontFamily: {
+      serif: ['times', 'serif'],
+    },
+    extend: {
+      brightness: {
+        40: '.4',
       },
     },
   },

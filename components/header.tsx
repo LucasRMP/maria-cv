@@ -3,10 +3,12 @@ import React from 'react';
 
 function Logo() {
   return (
-    <Link href="#">
-      <span className="text-6xl font-bold text-green-900">Maria</span>
+    <Link href="/">
+      <span className="text-5xl font-bold text-green-900 mr-1 font-serif">
+        Maria
+      </span>
       <span
-        className="w-5 h-5 inline-block rounded-full"
+        className="w-3 h-3 inline-block rounded-full"
         style={{
           background:
             'linear-gradient(180deg, #9FCCB0 0%, rgba(45, 66, 45, 0.84) 100%)',
@@ -20,7 +22,10 @@ const NavLink: React.FC<React.PropsWithChildren<{ href: string }>> = ({
   href,
   children,
 }) => (
-  <Link href={href} className="p-2 hover:bg-green-200 transition-all rounded">
+  <Link
+    href={href}
+    className="p-2 hover:bg-green-200 transition-all rounded font-serif"
+  >
     {children}
   </Link>
 );
@@ -32,9 +37,8 @@ export default function Header() {
         <Logo />
 
         <nav className="flex flex-grow justify-end items-center gap-8 text-xl text-green-900 transition-all">
-          <NavLink href="#">Formação</NavLink>
-          <NavLink href="#portifolio">Portifólio</NavLink>
-          <NavLink href="#footer">Contato</NavLink>
+          <NavLink href="/#portifolio">Portifólio</NavLink>
+          <NavLink href="/#footer">Contato</NavLink>
         </nav>
       </div>
     </header>

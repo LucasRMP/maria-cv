@@ -9,10 +9,10 @@ const roboto = Roboto({
 
 const Title = () => (
   <h2
-    className={`text-6xl -mt-16 uppercase ${roboto.className} self-end`}
+    className={`text-6xl -mt-8 uppercase ${roboto.className} self-end`}
     style={{
       transform: 'translateY(5px)',
-      letterSpacing: '0.155em',
+      letterSpacing: '0.1em',
 
       background:
         '-webkit-linear-gradient(270deg, rgba(159, 205, 177, 0.89) 0%, rgba(1, 39, 1, 0.89) 100%)',
@@ -22,8 +22,6 @@ const Title = () => (
     }}
   >
     Projetos
-    <br />
-    Pessoais
   </h2>
 );
 

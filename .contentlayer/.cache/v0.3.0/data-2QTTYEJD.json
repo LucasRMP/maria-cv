@@ -1,0 +1,50 @@
+{
+  "cacheItemsMap": {
+    "agcr-web": {
+      "document": {
+        "title": "Surfbot",
+        "date": "2023-02-28T03:00:00.000Z",
+        "body": {
+          "raw": "\n# HELLO WORLD\n\nlorem ipsum",
+          "html": "<h1>HELLO WORLD</h1>\n<p>lorem ipsum</p>"
+        },
+        "_id": "agcr-web",
+        "_raw": {
+          "sourceFilePath": "projects/agcr-web.md",
+          "sourceFileName": "agcr-web.md",
+          "sourceFileDir": "projects",
+          "contentType": "markdown",
+          "flattenedPath": "projects/agcr-web"
+        },
+        "type": "Project",
+        "slug": "agcr-web"
+      },
+      "documentHash": "1677954100390",
+      "hasWarnings": false,
+      "documentTypeName": "Project"
+    },
+    "projects/agcr-web.md": {
+      "document": {
+        "title": "AGCR Desktop",
+        "date": "2023-02-28T03:00:00.000Z",
+        "body": {
+          "raw": "\n# AGCR Desktop\n\n\nlorem ipsum\n\n[](/images/projects/)\n",
+          "html": "<h1>AGCR Desktop</h1>\n<p>lorem ipsum</p>\n<p><a href=\"/images/projects/\"></a></p>"
+        },
+        "_id": "agcr-web",
+        "_raw": {
+          "sourceFilePath": "projects/agcr-web.md",
+          "sourceFileName": "agcr-web.md",
+          "sourceFileDir": "projects",
+          "contentType": "markdown",
+          "flattenedPath": "projects/agcr-web"
+        },
+        "type": "Project",
+        "slug": "agcr-web"
+      },
+      "documentHash": "1677954426802",
+      "hasWarnings": true,
+      "documentTypeName": "Project"
+    }
+  }
+}
