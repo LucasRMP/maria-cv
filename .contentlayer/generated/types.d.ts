@@ -14,6 +14,7 @@ export type Project = {
   _raw: Local.RawDocumentData
   type: 'Project'
   title: string
+  description: string
   slug: string
   image: string
   date: IsoDateTimeString

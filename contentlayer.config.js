@@ -17,6 +17,10 @@ const Project = defineDocumentType(() => ({
       type: 'string',
       required: true,
     },
+    description: {
+      type: 'string',
+      required: true,
+    },
     slug: {
       type: 'string',
       required: true,

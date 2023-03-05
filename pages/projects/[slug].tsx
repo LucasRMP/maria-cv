@@ -1,54 +1,82 @@
 import { allProjects, Project } from 'contentlayer/generated';
 import { GetStaticProps, GetStaticPaths, NextPage } from 'next';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mdx } from '../../components/mdx';
 import { Section } from '../../components/section';
+import { SEO, useSiteMetadata } from '../../components/seo';
+import { Suggestion } from '../../components/suggestion';
 
 interface ProjectPageProps {
   project: Project;
   suggestions: Project[];
 }
 
-const Suggestion: React.FC<{ project: Project }> = ({ project }) => (
-  <Link href={`/projects/${project.slug}`} className="relative group">
-    <div className="absolute top-1/3 right-1/2 translate-x-1/2 translate-y-1/2 z-50 text-green-50 pointer-events-none hidden group-hover:block text-center">
-      <h3 className="font-bold text-xl mb-2">{project.title}</h3>
-      <p className="text-sm">{new Date(project.date).getFullYear()}</p>
-    </div>
-    <div
-      key={project.slug}
-      className="h-96 w-64 relative hover:brightness-40 transition-all"
-    >
-      <Image
-        className="object-cover object-top"
-        src={project.image}
-        alt={project.image}
-        fill
-      />
-    </div>
-  </Link>
-);
+const SuggestionList: React.FC<{
+  projects: Project[];
+  slideWidth?: number;
+}> = ({ projects, slideWidth = 64 }) => {
+  const [numberSlides, setNumberSlides] = React.useState(5);
 
-const ProjectPage: NextPage<ProjectPageProps> = ({ project, suggestions }) => {
+  React.useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const handleResize = () => {
+      const numSlides = Math.floor(window.innerWidth / (slideWidth * 4)) - 1.5;
+      setNumberSlides(Math.max(1, Math.min(numSlides, 5)));
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [slideWidth, projects]);
+
   return (
-    <Section>
-      <Mdx code={project.body.code} />
-
-      {suggestions?.length > 0 && (
+    <>
+      {projects?.length ? (
         <div className="mt-20 w-full">
           <h2 className="text-2xl font-bold mb-8 text-green-900 uppercase">
             Mais projetos
           </h2>
-          <div className="flex flex-wrap gap-4">
-            {suggestions.map((project) => (
-              <Suggestion key={project._id} project={project} />
+
+          <Swiper spaceBetween={16} slidesPerView={numberSlides}>
+            {projects.map((project) => (
+              <SwiperSlide key={project._id}>
+                <Suggestion project={project} />
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
-      )}
-    </Section>
+      ) : null}
+    </>
+  );
+};
+
+const ProjectPage: NextPage<ProjectPageProps> = ({ project, suggestions }) => {
+  const { title } = useSiteMetadata();
+
+  return (
+    <>
+      <SEO
+        title={`${project.title} | ${title}`}
+        description={project.description}
+        image={project.image}
+      />
+
+      <Section>
+        <Mdx code={project.body.code} />
+
+        <SuggestionList projects={suggestions} />
+      </Section>
+    </>
   );
 };
 

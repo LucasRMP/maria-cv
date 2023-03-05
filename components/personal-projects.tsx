@@ -1,6 +1,8 @@
 import { Roboto } from '@next/font/google';
+import { allProjects } from 'contentlayer/generated';
 import Image from 'next/image';
 import React from 'react';
+import { Suggestion } from './suggestion';
 
 const roboto = Roboto({
   weight: '500',
@@ -30,28 +32,10 @@ export default function PersonalProjects() {
     <div className="w-full bg-green-400 mt-20 px-20 pb-24 flex flex-col">
       <Title />
 
-      <div className="flex flex-row justify-evenly gap-10 mt-9">
-        <Image
-          src="/profile-feed.jpg"
-          width={375}
-          height={812}
-          alt="profile-feed"
-          quality={100}
-        />
-        <Image
-          src="/bank-account.jpg"
-          width={375}
-          height={812}
-          alt="bank-account"
-          quality={100}
-        />
-        <Image
-          src="/explore-nature.jpg"
-          width={375}
-          height={812}
-          alt="explore-nature"
-          quality={100}
-        />
+      <div className="flex flex-row flex-wrap justify-around gap-10 mt-9">
+        {allProjects.map((project) => (
+          <Suggestion key={project._id} project={project} size="lg" />
+        ))}
       </div>
     </div>
   );

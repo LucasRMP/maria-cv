@@ -15,6 +15,10 @@ var Project = defineDocumentType(() => ({
       type: "string",
       required: true
     },
+    description: {
+      type: "string",
+      required: true
+    },
     slug: {
       type: "string",
       required: true
@@ -56,4 +60,4 @@ var contentlayer_config_default = makeSource({
 export {
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-GADHBPRR.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-T5LWA46H.mjs.map

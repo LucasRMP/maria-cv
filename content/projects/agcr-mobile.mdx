@@ -2,13 +2,15 @@
 title: AGCR Mobile
 date: 2023-02-28T03:00:00Z
 slug: agcr-mobile
-image: /images/agcr/home.jpg
+image: /images/agcr-mobile/banner.png
+description: Site de inscrição para campeonatos de montaria.
 ---
 
-<Headline title="AGCR">
+<Headline title="AGCR Mobile">
   <Headline.Section>
     A proposta do site é facilitar a inscrição para os campeonatos e obter as
-    principais informações buscadas pelo o público alvo.
+    principais informações buscadas pelo o público alvo. Pensando assim,
+    incluímos a versão Mobile.
   </Headline.Section>
   <Headline.Section>
     Também foi requisitado que fosse de fácil acesso e navegação, com elementos
@@ -22,31 +24,23 @@ image: /images/agcr/home.jpg
   </Headline.Section>
 </Headline>
 
-<Grid cols="5fr_4fr">
+<Grid cols="483fr_226fr_209fr">
   <Grid.Item>
-    <Image alt="home" src="/images/agcr/home.jpg" width={1600} height={840} />
+    <Image src="/images/agcr-mobile/home.png" />
   </Grid.Item>
+    <Grid.Item>
+    <Image src="/images/agcr-mobile/about.jpg" />
+  </Grid.Item>
+    <Grid.Item>
+    <Image src="/images/agcr-mobile/tournaments.jpg" />
+  </Grid.Item>
+</Grid>
+
+<Grid cols="310fr_644fr" className="mt-8">
   <Grid.Item>
-    <Grid cols="10fr_3fr">
-      <Image
-        alt="board"
-        src="/images/agcr/board.jpg"
-        width={1600}
-        height={840}
-      />
-      <Image
-        alt="rounds"
-        src="/images/agcr/rounds.jpg"
-        width={1600}
-        height={840}
-      />
-      <Image
-        className="col-span-2"
-        alt="tournaments"
-        src="/images/agcr/tournaments.jpg"
-        width={1600}
-        height={840}
-      />
-    </Grid>
+    <Image src="/images/agcr-mobile/rounds.jpg" />
+  </Grid.Item>
+ <Grid.Item>
+    <Image src="/images/agcr-mobile/board.jpg" />
   </Grid.Item>
 </Grid>

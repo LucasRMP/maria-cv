@@ -2,5 +2,7 @@
 
 import agcrMobile from './agcr-mobile.json' assert { type: 'json' }
 import agcrWeb from './agcr-web.json' assert { type: 'json' }
+import bikraft from './bikraft.json' assert { type: 'json' }
+import surfboot from './surfboot.json' assert { type: 'json' }
 
-export const allProjects = [agcrMobile, agcrWeb]
+export const allProjects = [agcrMobile, agcrWeb, bikraft, surfboot]

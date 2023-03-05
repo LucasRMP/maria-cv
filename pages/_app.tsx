@@ -1,5 +1,7 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import '../styles/globals.css';
+import 'swiper/css';
+
+import type { AppProps } from 'next/app';
 import Header from '../components/header';
 import { Noto_Sans_Display } from '@next/font/google';
 import { HeaderAnchor } from '../components/header-anchor';
@@ -26,4 +28,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp
+export default MyApp;
